@@ -4,7 +4,9 @@
 
 A full-stack website I built for a friend's food business in Albuquerque, New Mexico. ABQ Desi Bites serves authentic South Indian and Hyderabadi cuisine — dosas, biryani, momos, and more.
 
-🌐 **Live site:** coming soon
+This is a website under ongoing developments and improvements.
+
+Link : http://www.abqdesibites.org/
 
 ---
 
