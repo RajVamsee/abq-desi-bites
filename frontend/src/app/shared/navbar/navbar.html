@@ -1,0 +1,23 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="container nav-inner">
+    <a routerLink="/" class="brand" (click)="closeMenu()">
+      <span class="brand-icon">🍛</span>
+      <div class="brand-text">
+        <span class="brand-name">ABQ Desi Bites</span>
+        <span class="brand-tagline">Every Bite, A Memory</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/menu" routerLinkActive="active" (click)="closeMenu()">Menu</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About Us</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+      <li><a routerLink="/menu" class="btn btn-primary nav-cta" (click)="closeMenu()">Order Now</a></li>
+    </ul>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>

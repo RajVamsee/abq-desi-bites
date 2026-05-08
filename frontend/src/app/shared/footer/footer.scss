@@ -1,0 +1,93 @@
+.footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.75);
+  padding-top: 64px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.footer-brand {
+  .brand-logo { font-size: 40px; margin-bottom: 8px; }
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .tagline {
+    color: var(--accent-light);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-desc { font-size: 14px; line-height: 1.7; max-width: 280px; }
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+
+  a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+    &:hover { color: var(--accent-light); }
+  }
+}
+
+.footer-info {
+  h4 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      &:hover { color: var(--accent-light); }
+    }
+  }
+}
+
+.allergy {
+  margin-top: 20px;
+  padding: 12px;
+  background: rgba(192,57,43,0.15);
+  border-radius: 8px;
+  border: 1px solid rgba(192,57,43,0.3);
+  font-size: 13px;
+
+  p { margin-bottom: 4px; }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 0;
+
+  p {
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+}

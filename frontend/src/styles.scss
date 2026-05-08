@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary:       #c0392b;
+  --primary-dark:  #922b21;
+  --accent:        #e67e22;
+  --accent-light:  #f39c12;
+  --dark:          #1a1a1a;
+  --dark-soft:     #2c2c2c;
+  --light:         #fdf6f0;
+  --light-mid:     #f5ebe0;
+  --text:          #333333;
+  --text-muted:    #777777;
+  --white:         #ffffff;
+  --border:        #e8d5c4;
+  --shadow:        0 4px 24px rgba(0,0,0,0.10);
+  --shadow-lg:     0 8px 48px rgba(0,0,0,0.15);
+  --radius:        12px;
+  --radius-sm:     8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+
+a { text-decoration: none; color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  &-primary {
+    background: var(--primary);
+    color: var(--white);
+    &:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: var(--shadow); }
+  }
+
+  &-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    &:hover { background: var(--white); color: var(--primary); }
+  }
+
+  &-accent {
+    background: var(--accent);
+    color: var(--white);
+    &:hover { background: var(--accent-light); transform: translateY(-1px); }
+  }
+}
+
+section { padding: 80px 0; }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 16px auto 0;
+    border-radius: 2px;
+  }
+}

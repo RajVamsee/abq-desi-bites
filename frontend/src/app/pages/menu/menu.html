@@ -1,0 +1,52 @@
+<div class="menu-page">
+  <div class="menu-hero">
+    <div class="container">
+      <span class="page-badge">Our Menu</span>
+      <h1>Fresh & Flavorful</h1>
+      <p>Every item made fresh daily. Weekend specials available Friday–Sunday.</p>
+    </div>
+  </div>
+
+  <div class="container menu-body">
+    @if (loading()) {
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading menu...</p>
+      </div>
+    }
+
+    @if (error()) {
+      <div class="error-state">
+        <p>⚠️ Could not load the menu. Please try again or call us at (505) 677-4394.</p>
+      </div>
+    }
+
+    @for (category of categories(); track category.id) {
+      <div class="category-section" [id]="'cat-' + category.id">
+        <div class="category-header">
+          <h2>{{ category.name }}</h2>
+          @if (category.name === 'Weekend Specials') {
+            <span class="weekend-badge">Fri · Sat · Sun Only</span>
+          }
+          <p class="category-desc">{{ category.description }}</p>
+        </div>
+
+        <div class="items-grid">
+          @for (item of category.items; track item.id) {
+            <div class="item-card" [class.weekend]="item.isWeekend">
+              <div class="item-info">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+              <div class="item-price">${{ item.price | number:'1.2-2' }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <div class="addon-notice">
+      <span>➕ Add Ghee / Butter — <strong>$1.00</strong></span>
+    </div>
+  </div>
+</div>

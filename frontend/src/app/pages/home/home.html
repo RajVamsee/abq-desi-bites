@@ -1,0 +1,76 @@
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <span class="hero-badge">Now Open in Albuquerque, NM</span>
+    <h1>Authentic <span class="highlight">Desi Flavors</span><br>Right Here in ABQ</h1>
+    <p>From crispy dosas to Hyderabadi Biryani — every dish is a journey back home. Pickup & DoorDash available.</p>
+    <div class="hero-actions">
+      <a routerLink="/menu" class="btn btn-primary">View Full Menu</a>
+      <a routerLink="/contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-info">
+      <div class="info-item">📍 1800 Lomas Blvd NE, ABQ</div>
+      <div class="info-item">📞 (505) 677-4394</div>
+      <div class="info-item">🛍️ Pickup & DoorDash</div>
+    </div>
+  </div>
+</section>
+
+<!-- Highlights -->
+<section class="highlights">
+  <div class="container">
+    <div class="highlights-grid">
+      @for (item of highlights; track item.title) {
+        <div class="highlight-card">
+          <div class="highlight-icon">{{ item.icon }}</div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Featured Categories -->
+<section class="featured">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Specialties</h2>
+      <p>Handcrafted dishes from the streets of Hyderabad, Chennai & beyond</p>
+      <div class="divider"></div>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-card">
+        <div class="featured-emoji">🫓</div>
+        <h3>Dosa Specials</h3>
+        <p>From classic plain dosa to NM Cheese & Chicken Keema — 9 varieties, all crispy perfection.</p>
+        <a routerLink="/menu" fragment="cat-1" class="card-link">Explore →</a>
+      </div>
+      <div class="featured-card featured-card--accent">
+        <div class="featured-emoji">🍚</div>
+        <h3>Weekend Specials</h3>
+        <p>Slow-cooked Hyderabadi Biryani, Momos & more — available every Friday, Saturday & Sunday.</p>
+        <a routerLink="/menu" fragment="cat-4" class="card-link">Explore →</a>
+      </div>
+      <div class="featured-card">
+        <div class="featured-emoji">🍟</div>
+        <h3>Evening Snacks</h3>
+        <p>Guntha Ponganalu, Vada Pav, Mirchi Bajji & more — perfect for an evening bite.</p>
+        <a routerLink="/menu" fragment="cat-3" class="card-link">Explore →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <h2>Ready to Order?</h2>
+    <p>Walk in for pickup or order through DoorDash. We're ready when you are.</p>
+    <div class="cta-actions">
+      <a routerLink="/menu" class="btn btn-primary">See the Menu</a>
+      <a href="tel:+15056774394" class="btn btn-outline">Call Us Now</a>
+    </div>
+  </div>
+</section>
