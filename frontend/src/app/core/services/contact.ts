@@ -12,7 +12,7 @@ export interface ContactRequest {
 @Injectable({ providedIn: 'root' })
 export class ContactService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:8080/api/contact';
+  private apiUrl = 'https://abq-desi-bites-production.up.railway.app/api/contact';
 
   submitInquiry(request: ContactRequest): Observable<{ message: string }> {
     return this.http.post<{ message: string }>(this.apiUrl, request);
