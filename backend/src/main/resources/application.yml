@@ -16,6 +16,22 @@ spring:
 server:
   port: ${PORT:8080}
 
+stripe:
+  secret-key: ${STRIPE_SECRET_KEY}
+  publishable-key: ${STRIPE_PUBLISHABLE_KEY}
+
+spring.mail:
+  host: smtp.gmail.com
+  port: 587
+  username: ${MAIL_USERNAME:}
+  password: ${MAIL_PASSWORD:}
+  properties:
+    mail.smtp.auth: true
+    mail.smtp.starttls.enable: true
+
+app:
+  notification-email: ${NOTIFICATION_EMAIL:abqdesibites@gmail.com}
+
 logging:
   level:
     com.abqdesibites: INFO
