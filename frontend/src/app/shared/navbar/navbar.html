@@ -16,8 +16,11 @@
       <li><a routerLink="/menu" class="btn btn-primary nav-cta" (click)="closeMenu()">Order Now</a></li>
     </ul>
 
-    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <app-cart-sidebar></app-cart-sidebar>
+      <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>

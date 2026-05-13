@@ -1,9 +1,10 @@
 import { Component, signal, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CartSidebar } from '../cart-sidebar/cart-sidebar';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, CartSidebar],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })

@@ -79,6 +79,12 @@
   }
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;

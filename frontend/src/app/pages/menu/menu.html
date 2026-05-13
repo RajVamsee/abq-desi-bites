@@ -24,10 +24,11 @@
     @for (category of categories(); track category.id) {
       <div class="category-section" [id]="'cat-' + category.id">
         <div class="category-header">
-          <h2>{{ category.name }}</h2>
-          @if (category.name === 'Weekend Specials') {
-            <span class="weekend-badge">Fri · Sat · Sun Only</span>
-          }
+          <h2>{{ category.name }}
+            @if (category.name === 'Weekend Specials') {
+              <span class="weekend-badge">Fri · Sat · Sun Only</span>
+            }
+          </h2>
           <p class="category-desc">{{ category.description }}</p>
         </div>
 
@@ -37,16 +38,27 @@
               <div class="item-info">
                 <h3>{{ item.name }}</h3>
                 <p>{{ item.description }}</p>
+                <div class="addon-row">
+                  <label class="addon-check">
+                    <input type="checkbox"
+                      [checked]="addOnSelected()['' + item.id]"
+                      (change)="toggleAddOn('' + item.id)" />
+                    Add Ghee / Butter <span class="addon-price">+$1.00</span>
+                  </label>
+                </div>
               </div>
-              <div class="item-price">${{ item.price | number:'1.2-2' }}</div>
+              <div class="item-right">
+                <div class="item-price">${{ item.price | number:'1.2-2' }}</div>
+                <button class="add-btn"
+                  [class.added]="addedIndex() === '' + item.id"
+                  (click)="addToCart(item)">
+                  {{ addedIndex() === '' + item.id ? '✓ Added' : '+ Add' }}
+                </button>
+              </div>
             </div>
           }
         </div>
       </div>
     }
-
-    <div class="addon-notice">
-      <span>➕ Add Ghee / Butter — <strong>$1.00</strong></span>
-    </div>
   </div>
 </div>
