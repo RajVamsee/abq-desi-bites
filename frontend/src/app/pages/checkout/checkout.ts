@@ -73,8 +73,9 @@ export class Checkout implements OnInit {
           paymentElement.mount('#payment-element');
         }, 100);
       },
-      error: () => {
-        this.errorMsg.set('Could not create order. Please try again.');
+      error: (err) => {
+        const msg = err?.error?.error || err?.message || 'Could not create order. Please try again.';
+        this.errorMsg.set(msg);
         this.loading.set(false);
       }
     });
