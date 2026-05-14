@@ -1,17 +1,17 @@
 package com.abqdesibites.service;
 
 import com.abqdesibites.model.Order;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class EmailService {
 
-    private final JavaMailSender mailSender;
+    @Autowired(required = false)
+    private JavaMailSender mailSender;
 
     @Value("${app.notification-email}")
     private String notificationEmail;
@@ -25,6 +25,7 @@ public class EmailService {
     }
 
     private void send(String to, String subject, String body) {
+        if (mailSender == null) return;
         try {
             SimpleMailMessage msg = new SimpleMailMessage();
             msg.setTo(to);
