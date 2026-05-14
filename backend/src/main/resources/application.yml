@@ -13,21 +13,24 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
 
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 server:
   port: ${PORT:8080}
 
 stripe:
-  secret-key: ${STRIPE_SECRET_KEY}
-  publishable-key: ${STRIPE_PUBLISHABLE_KEY}
-
-spring.mail:
-  host: smtp.gmail.com
-  port: 587
-  username: ${MAIL_USERNAME:}
-  password: ${MAIL_PASSWORD:}
-  properties:
-    mail.smtp.auth: true
-    mail.smtp.starttls.enable: true
+  secret-key: ${STRIPE_SECRET_KEY:}
+  publishable-key: ${STRIPE_PUBLISHABLE_KEY:}
 
 app:
   notification-email: ${NOTIFICATION_EMAIL:abqdesibites@gmail.com}
